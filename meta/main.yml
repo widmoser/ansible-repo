@@ -1,0 +1,18 @@
+galaxy_info:
+  author: Hannes Widmoser
+  description: Private bitbucket repository support.
+  company: Tiny Desk Development
+
+  license: MIT
+
+  min_ansible_version: 1.2
+
+  platforms:
+    - name: Debian
+      versions:
+        - jessie
+
+  galaxy_tags: []
+
+dependencies:
+  - geerlingguy.git

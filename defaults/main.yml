@@ -1,0 +1,4 @@
+---
+# defaults file for ansible-repo
+ssh_key_paths: 
+  - ~/.ssh/id_rsa.pub
