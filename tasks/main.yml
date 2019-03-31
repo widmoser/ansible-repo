@@ -10,16 +10,6 @@
     user: deploy
     key: "{{ lookup('file', '{{ item }}') }}"
   with_items: "{{ ssh_key_paths }}"
-- shell: cat "/home/deploy/.ssh/id_rsa.pub"
-  register: bitbucket_key
-- name: Add ssh key to bitbucket
-  bitbucket_deployment_key: 
-    name: kv-deployment
-    user: "{{ bitbucket_username }}"
-    password: "{{ bitbucket_password }}"
-    pubkey: "{{ bitbucket_key.stdout }}"
-    repository: "{{ item }}"
-  with_items: "{{ repository_names }}"
 - name: ensure bibucket.org is a known host
   known_hosts:
     name: bitbucket.org
